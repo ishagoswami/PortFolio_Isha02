@@ -1,57 +1,3 @@
-// // scrollsection
-// let sections = document.querySelectorAll('section');
-// let navLinks = document.querySelectorAll('header nav a');
-
-// window.onscroll = () =>{
-//     sections.forEach(sec => {
-//         let top = window.scrollY;
-//         let offset = sec.offsetTop - 150;
-//         let height = sec.offsetHeight;
-//         let id = sec.getAttribute(id);
-
-//         if(top >= offset && top < offset + height)
-//         {
-//             navLinks.forEach(links => {
-//                 links.classList.remove('active');
-//                 document.querySelector('header nav a[href*='+ id +']').classList.add('active');
-//             });
-//         };
-//     });
-// };
-
-
-let header = document.querySelector("header");
-let menu = document.querySelector("#menu-icon");
-let navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-  header.classList.toggle("shadow", window.scrollY > 0);
-});
-
-menu.onclick = () => {
-  navbar.classList.toggle("active");
-};
-window.onscroll = () => {
-  navbar.classList.remove("active");
-};
-
-// Dark Mode / light mode
-let darkmode = document.querySelector("#darkmode");
-
-darkmode.onclick = () => {
-  if (darkmode.classList.contains("bx-moon")) {
-    darkmode.classList.replace("bx-moon", "bx-sun");
-    document.body.classList.add("active");
-  } else {
-    darkmode.classList.replace("bx-sun", "bx-moon");
-    document.body.classList.remove("active");
-  }
-};
-
-         
-
-
-// typed cursor
 
 var TxtType = function(el, toRotate, period) {
   this.toRotate = toRotate;
@@ -109,11 +55,3 @@ window.onload = function() {
   css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
   document.body.appendChild(css);
 };
-
-let image=document.getElementById('img');
-let images=['/images/pic1.jpg','/images/pic2.jpg','/images/pic3.jpg','/images/pic4.jpg','/images/pic5.jpg','/images/pic6.jpg','/images/pic7.jpg','/images/pic8.jpg'];
-setInterval(function()
-{
-  let random=Math.floor(Math.random()*8);
-  image.src=images[random];
-},800);
